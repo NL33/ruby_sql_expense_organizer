@@ -1,0 +1,15 @@
+Steps to Setup Database and Tables in Postgres:
+
+1.  # CREATE DATABASE expense_organizer;
+2.  # \c expense_organizer;
+
+3. # CREATE TABLE expenses (expenseID serial PRIMARY KEY, expense_name varchar, expense_price float, expense_date timestamp);
+
+4. # CREATE TABLE categories (categoryID serial PRIMARY KEY, category_name varchar);
+
+5. # CREATE TABLE expenses_categories (joinID serial PRIMARY KEY, expenseID int, categoryID int);
+
+6. NOTE(later realized I would prefer date to be "date" type for the date of the expense purchases, not "timestamp" type):
+
+	(i) # ALTER TABLE expenses DROP COLUMN expense_date; 
+	(ii) # ALTER TABLE expenses ADD expense_date date;
